@@ -1,28 +1,19 @@
 from inputs import get_gamepad
 import keyboard
 
-"""
-check for controller inputs
-"""
 
-
-# def controller_status():
-#     while True:
-#         events = get_gamepad()
-#         for event in events:
-#             print("TYPE")
-#             print(event.ev_type)
-#             print('-------------')
-#             print("code")
-#             print(event.code)
-#             print('-------------')
-#             print("state")
-#             print(event.state)
-#             print('-------------')
-#             print(event.ev_type, event.code, event.state)
-#             print(event.code)
-#
-# controller_status()
+def controller_status():
+    """
+    check for controller inputs
+    """
+    while True:
+        events = get_gamepad()
+        for event in events:
+            print("code")
+            print(event.code)
+            print('-------------')
+            print("state")
+            print(event.state)
 
 
 def main():
@@ -54,33 +45,25 @@ def main():
             """
             Rotating character by holding left ctrl
             """
-            if event.code == "BTN_TR" and event.state == 1:
+            if event.code == "BTN_WEST" and event.state == 1:
                 keyboard.press(29)
-            if event.code == "BTN_TR" and event.state == 0:
+            if event.code == "BTN_WEST" and event.state == 0:
                 keyboard.release(29)
-            # if event.code == "BTN_WEST" and event.state == 1:
-            #     keyboard.send('ctrl+w')
-            # if event.code == "BTN_NORTH" and event.state == 1:
-            #     keyboard.send('ctrl+a')
-            # if event.code == "BTN_SOUTH" and event.state == 1:
-            #     keyboard.send('ctrl+s')
-            # if event.code == "BTN_EAST" and event.state == 1:
-            #     keyboard.send('ctrl+d')
             """
             numpad walking
             """
+            if event.code == "BTN_TL" and event.state == 1:
+                keyboard.send(71)
+            if event.code == "BTN_TR" and event.state == 1:
+                keyboard.send(73)
             if event.code == "ABS_RZ" and event.state > 1000:
                 keyboard.press_and_release(81)
             if event.code == "ABS_Z" and event.state > 1000:
                 keyboard.press_and_release(79)
-            if event.code == "BTN_TR" and event.state == 1:
-                keyboard.press_and_release(73)
-            if event.code == "BTN_TL" and event.state == 1:
-                keyboard.press_and_release(71)
             """
-            change to combat mode
+            Change to combat mode
             """
-            if event.code == "BTN_START" and event.state == 1:
+            if event.code == "BTN_EAST" and event.state == 1:
                 combat()
 
 
@@ -118,12 +101,12 @@ def combat():
                 keyboard.send('f2')
             if event.code == "BTN_SOUTH" and event.state == 1:
                 keyboard.send('f3')
-            if event.code == "BTN_EAST" and event.state == 1:
-                keyboard.send('f4')
+            # if event.code == "BTN_EAST" and event.state == 1:
+            #     keyboard.send('f4')
             """
             change to walking mode
             """
-            if event.code == "BTN_START" and event.state == 1:
+            if event.code == "BTN_EAST" and event.state == 1:
                 main()
 
 
