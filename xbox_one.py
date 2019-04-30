@@ -1,20 +1,9 @@
+# Dependencies
 from inputs import get_gamepad
 import keyboard
+
+# Config settings
 import config
-
-
-def controller_status():
-    """
-    check for controller inputs
-    """
-    while True:
-        events = get_gamepad()
-        for event in events:
-            print("code")
-            print(event.code)
-            print('-------------')
-            print("state")
-            print(event.state)
 
 
 def main():
@@ -50,7 +39,7 @@ def main():
             if event.code == config.y and event.state == 0:
                 keyboard.release(config.left_ctrl)
             """
-            numpad walking - you can change "config.[button]" 
+            triggers - numpad walking - you can change "config.[button]" 
             for your own preferences
             """
             if event.code == config.lb and event.state == 1:
@@ -62,7 +51,8 @@ def main():
             if event.code == config.lt and event.state > 1000:
                 keyboard.send(config.numpad_1)
             """
-            buttons actions
+            buttons - you can change "config.[button]" 
+            for your own preferences (y does rotating and b change mode)
             """
             if event.code == config.x and event.state == 1:
                 keyboard.send(config.f1)
@@ -104,16 +94,27 @@ def battle():
             if event.code == "ABS_HAT0Y" and event.state == 0:
                 keyboard.release(config.down)
             """
-            test
+            triggers - you can change "config.[button]" 
+            for your own preferences
             """
-            if event.code == "BTN_WEST" and event.state == 1:
-                keyboard.send('f1')
-            if event.code == "BTN_NORTH" and event.state == 1:
-                keyboard.send('f2')
-            if event.code == "BTN_SOUTH" and event.state == 1:
-                keyboard.send('f3')
-            # if event.code == "BTN_EAST" and event.state == 1:
-            #     keyboard.send('f4')
+            if event.code == config.lb and event.state == 1:
+                keyboard.send(config.f3)
+            if event.code == config.rb and event.state == 1:
+                keyboard.send(config.f4)
+            if event.code == config.rt and event.state > 1000:
+                keyboard.send(config.f5)
+            if event.code == config.lt and event.state > 1000:
+                keyboard.send(config.f6)
+            """
+            buttons - you can change "config.[button]" 
+            for your own preferences
+            """
+            if event.code == config.y and event.state == 1:
+                keyboard.send(config.f7)
+            if event.code == config.x and event.state == 1:
+                keyboard.send(config.f8)
+            if event.code == config.a and event.state == 1:
+                keyboard.send(config.f9)
             """
             Changing modes
             """
@@ -150,6 +151,30 @@ def casual():
             if event.code == "ABS_HAT0Y" and event.state == 0:
                 keyboard.release(config.down)
             """
+            triggers - you can change "config.[button]" 
+            for your own preferences
+            """
+            if event.code == config.lb and event.state == 1:
+                keyboard.send(config.cf1)
+            if event.code == config.rb and event.state == 1:
+                keyboard.send(config.cf2)
+            if event.code == config.rt and event.state > 1000:
+                keyboard.send(config.cf3)
+            if event.code == config.lt and event.state > 1000:
+                keyboard.send(config.cf4)
+            """
+            buttons - you can change "config.[button]" 
+            for your own preferences
+            """
+            if event.code == config.y and event.state == 1:
+                keyboard.send(config.cf5)
+            if event.code == config.x and event.state == 1:
+                keyboard.send(config.cf6)
+            if event.code == config.a and event.state == 1:
+                keyboard.send(config.cf7)
+            if event.code == config.b and event.state == 1:
+                keyboard.send(config.cf8)
+            """
             Changing modes
             """
             if event.code == config.select and event.state == 1:
@@ -158,13 +183,12 @@ def casual():
                 main()
 
 
-if __name__ == "__main__":
-    main()
-
 """
 Prints the scan code of all currently pressed keys.
 Updates on every keyboard event.
 """
+
+
 # import sys
 #
 # sys.path.append('..')
@@ -180,3 +204,20 @@ Updates on every keyboard event.
 #
 # keyboard.hook(print_pressed_keys)
 # keyboard.wait()
+
+def controller_status():
+    """
+    function checks for controller inputs
+    """
+    while True:
+        events = get_gamepad()
+        for event in events:
+            print("code")
+            print(event.code)
+            print('-------------')
+            print("state")
+            print(event.state)
+
+
+if __name__ == "__main__":
+    main()
