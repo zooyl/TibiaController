@@ -61,10 +61,14 @@ def main():
             if event.code == "ABS_Z" and event.state > 1000:
                 keyboard.press_and_release(79)
             """
-            Change to combat mode
+            Change to other modes
             """
             if event.code == "BTN_EAST" and event.state == 1:
                 combat()
+            if event.code == "BTN_SELECT" and event.state == 1:
+                casual()
+            if event.code == "BTN_START" and event.state == 1:
+                main()
 
 
 def combat():
@@ -104,9 +108,26 @@ def combat():
             # if event.code == "BTN_EAST" and event.state == 1:
             #     keyboard.send('f4')
             """
-            change to walking mode
+            change to other modes
             """
             if event.code == "BTN_EAST" and event.state == 1:
+                main()
+            if event.code == "BTN_SELECT" and event.state == 1:
+                casual()
+            if event.code == "BTN_START" and event.state == 1:
+                main()
+
+
+def casual():
+    while True:
+        events = get_gamepad()
+        for event in events:
+            """
+            change to other modes
+            """
+            if event.code == "BTN_SELECT" and event.state == 1:
+                casual()
+            if event.code == "BTN_START" and event.state == 1:
                 main()
 
 
