@@ -1,6 +1,6 @@
 from inputs import get_gamepad
 import keyboard
-import config_linux
+import config
 
 
 def controller_status():
@@ -26,51 +26,60 @@ def main():
             It is necessary here to rotate character
             """
             if event.code == "ABS_HAT0X" and event.state == 1:
-                keyboard.press(config_linux.right)
+                keyboard.press(config.right)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(config_linux.right)
+                keyboard.release(config.right)
             if event.code == "ABS_HAT0X" and event.state == -1:
-                keyboard.press(config_linux.left)
+                keyboard.press(config.left)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(config_linux.left)
+                keyboard.release(config.left)
             if event.code == "ABS_HAT0Y" and event.state == -1:
-                keyboard.press(config_linux.up)
+                keyboard.press(config.up)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(config_linux.up)
+                keyboard.release(config.up)
             if event.code == "ABS_HAT0Y" and event.state == 1:
-                keyboard.press(config_linux.down)
+                keyboard.press(config.down)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(config_linux.down)
+                keyboard.release(config.down)
             """
-            Rotating character by holding left ctrl
+            Rotating character by holding left ctrl -
+            you can change "config.[button]" for your own preferences
             """
-            if event.code == config_linux.y and event.state == 1:
-                keyboard.press(config_linux.left_ctrl)
-            if event.code == config_linux.y and event.state == 0:
-                keyboard.release(config_linux.left_ctrl)
+            if event.code == config.y and event.state == 1:
+                keyboard.press(config.left_ctrl)
+            if event.code == config.y and event.state == 0:
+                keyboard.release(config.left_ctrl)
             """
-            numpad walking
+            numpad walking - you can change "config.[button]" 
+            for your own preferences
             """
-            if event.code == "BTN_TL" and event.state == 1:
-                keyboard.send(71)
-            if event.code == "BTN_TR" and event.state == 1:
-                keyboard.send(73)
-            if event.code == "ABS_RZ" and event.state > 1000:
-                keyboard.press_and_release(81)
-            if event.code == "ABS_Z" and event.state > 1000:
-                keyboard.press_and_release(79)
+            if event.code == config.lb and event.state == 1:
+                keyboard.send(config.numpad_7)
+            if event.code == config.rb and event.state == 1:
+                keyboard.send(config.numpad_9)
+            if event.code == config.rt and event.state > 1000:
+                keyboard.send(config.numpad_3)
+            if event.code == config.lt and event.state > 1000:
+                keyboard.send(config.numpad_1)
+            """
+            buttons actions
+            """
+            if event.code == config.x and event.state == 1:
+                keyboard.send(config.f1)
+            if event.code == config.a and event.state == 1:
+                keyboard.send(config.f2)
             """
             Changing modes
             """
-            if event.code == "BTN_SELECT" and event.state == 1:
+            if event.code == config.select and event.state == 1:
                 casual()
-            if event.code == "BTN_START" and event.state == 1:
+            if event.code == config.start and event.state == 1:
                 main()
-            if event.code == "BTN_EAST" and event.state == 1:
-                combat()
+            if event.code == config.b and event.state == 1:
+                battle()
 
 
-def combat():
+def battle():
     while True:
         events = get_gamepad()
         for event in events:
@@ -79,21 +88,21 @@ def combat():
             It is necessary here to rotate character
             """
             if event.code == "ABS_HAT0X" and event.state == 1:
-                keyboard.press(config_linux.right)
+                keyboard.press(config.right)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(config_linux.right)
+                keyboard.release(config.right)
             if event.code == "ABS_HAT0X" and event.state == -1:
-                keyboard.press(config_linux.left)
+                keyboard.press(config.left)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(config_linux.left)
+                keyboard.release(config.left)
             if event.code == "ABS_HAT0Y" and event.state == -1:
-                keyboard.press(config_linux.up)
+                keyboard.press(config.up)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(config_linux.up)
+                keyboard.release(config.up)
             if event.code == "ABS_HAT0Y" and event.state == 1:
-                keyboard.press(config_linux.down)
+                keyboard.press(config.down)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(config_linux.down)
+                keyboard.release(config.down)
             """
             test
             """
@@ -108,11 +117,11 @@ def combat():
             """
             Changing modes
             """
-            if event.code == "BTN_SELECT" and event.state == 1:
+            if event.code == config.select and event.state == 1:
                 casual()
-            if event.code == "BTN_START" and event.state == 1:
+            if event.code == config.start and event.state == 1:
                 main()
-            if event.code == "BTN_EAST" and event.state == 1:
+            if event.code == config.b and event.state == 1:
                 main()
 
 
@@ -125,27 +134,27 @@ def casual():
             It is necessary here to rotate character
             """
             if event.code == "ABS_HAT0X" and event.state == 1:
-                keyboard.press(config_linux.right)
+                keyboard.press(config.right)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(config_linux.right)
+                keyboard.release(config.right)
             if event.code == "ABS_HAT0X" and event.state == -1:
-                keyboard.press(config_linux.left)
+                keyboard.press(config.left)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(config_linux.left)
+                keyboard.release(config.left)
             if event.code == "ABS_HAT0Y" and event.state == -1:
-                keyboard.press(config_linux.up)
+                keyboard.press(config.up)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(config_linux.up)
+                keyboard.release(config.up)
             if event.code == "ABS_HAT0Y" and event.state == 1:
-                keyboard.press(config_linux.down)
+                keyboard.press(config.down)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(config_linux.down)
+                keyboard.release(config.down)
             """
             Changing modes
             """
-            if event.code == "BTN_SELECT" and event.state == 1:
+            if event.code == config.select and event.state == 1:
                 casual()
-            if event.code == "BTN_START" and event.state == 1:
+            if event.code == config.start and event.state == 1:
                 main()
 
 
@@ -171,16 +180,3 @@ Updates on every keyboard event.
 #
 # keyboard.hook(print_pressed_keys)
 # keyboard.wait()
-
-"""
-Shortcuts for keys
-
-left ctrl = 29
-left shift = 42
-left alt = 56
-
-BTN_START = start
-BTN_SELECT = select
-
-
-"""
