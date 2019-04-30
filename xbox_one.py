@@ -1,5 +1,6 @@
 from inputs import get_gamepad
 import keyboard
+import config_linux
 
 
 def controller_status():
@@ -21,34 +22,32 @@ def main():
         events = get_gamepad()
         for event in events:
             """
-            Walking function
-            D-pad buttons in order: right, left, up, down
-            It allows character to move
-            Player can hold button down to run straight forward
+            Function allows character to move
+            It is necessary here to rotate character
             """
             if event.code == "ABS_HAT0X" and event.state == 1:
-                keyboard.press(106)
+                keyboard.press(config_linux.right)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(106)
+                keyboard.release(config_linux.right)
             if event.code == "ABS_HAT0X" and event.state == -1:
-                keyboard.press(105)
+                keyboard.press(config_linux.left)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(105)
+                keyboard.release(config_linux.left)
             if event.code == "ABS_HAT0Y" and event.state == -1:
-                keyboard.press(103)
+                keyboard.press(config_linux.up)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(103)
+                keyboard.release(config_linux.up)
             if event.code == "ABS_HAT0Y" and event.state == 1:
-                keyboard.press(108)
+                keyboard.press(config_linux.down)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(108)
+                keyboard.release(config_linux.down)
             """
             Rotating character by holding left ctrl
             """
-            if event.code == "BTN_WEST" and event.state == 1:
-                keyboard.press(29)
-            if event.code == "BTN_WEST" and event.state == 0:
-                keyboard.release(29)
+            if event.code == config_linux.y and event.state == 1:
+                keyboard.press(config_linux.left_ctrl)
+            if event.code == config_linux.y and event.state == 0:
+                keyboard.release(config_linux.left_ctrl)
             """
             numpad walking
             """
@@ -61,14 +60,14 @@ def main():
             if event.code == "ABS_Z" and event.state > 1000:
                 keyboard.press_and_release(79)
             """
-            Change to other modes
+            Changing modes
             """
-            if event.code == "BTN_EAST" and event.state == 1:
-                combat()
             if event.code == "BTN_SELECT" and event.state == 1:
                 casual()
             if event.code == "BTN_START" and event.state == 1:
                 main()
+            if event.code == "BTN_EAST" and event.state == 1:
+                combat()
 
 
 def combat():
@@ -76,26 +75,25 @@ def combat():
         events = get_gamepad()
         for event in events:
             """
-            D-pad buttons in order: right, left, up, down
-            It allows character to move
-            Player can hold button down to run straight forward
+            Function allows character to move
+            It is necessary here to rotate character
             """
             if event.code == "ABS_HAT0X" and event.state == 1:
-                keyboard.press(106)
+                keyboard.press(config_linux.right)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(106)
+                keyboard.release(config_linux.right)
             if event.code == "ABS_HAT0X" and event.state == -1:
-                keyboard.press(105)
+                keyboard.press(config_linux.left)
             if event.code == "ABS_HAT0X" and event.state == 0:
-                keyboard.release(105)
+                keyboard.release(config_linux.left)
             if event.code == "ABS_HAT0Y" and event.state == -1:
-                keyboard.press(103)
+                keyboard.press(config_linux.up)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(103)
+                keyboard.release(config_linux.up)
             if event.code == "ABS_HAT0Y" and event.state == 1:
-                keyboard.press(108)
+                keyboard.press(config_linux.down)
             if event.code == "ABS_HAT0Y" and event.state == 0:
-                keyboard.release(108)
+                keyboard.release(config_linux.down)
             """
             test
             """
@@ -108,13 +106,13 @@ def combat():
             # if event.code == "BTN_EAST" and event.state == 1:
             #     keyboard.send('f4')
             """
-            change to other modes
+            Changing modes
             """
-            if event.code == "BTN_EAST" and event.state == 1:
-                main()
             if event.code == "BTN_SELECT" and event.state == 1:
                 casual()
             if event.code == "BTN_START" and event.state == 1:
+                main()
+            if event.code == "BTN_EAST" and event.state == 1:
                 main()
 
 
@@ -123,7 +121,27 @@ def casual():
         events = get_gamepad()
         for event in events:
             """
-            change to other modes
+            Function allows character to move
+            It is necessary here to rotate character
+            """
+            if event.code == "ABS_HAT0X" and event.state == 1:
+                keyboard.press(config_linux.right)
+            if event.code == "ABS_HAT0X" and event.state == 0:
+                keyboard.release(config_linux.right)
+            if event.code == "ABS_HAT0X" and event.state == -1:
+                keyboard.press(config_linux.left)
+            if event.code == "ABS_HAT0X" and event.state == 0:
+                keyboard.release(config_linux.left)
+            if event.code == "ABS_HAT0Y" and event.state == -1:
+                keyboard.press(config_linux.up)
+            if event.code == "ABS_HAT0Y" and event.state == 0:
+                keyboard.release(config_linux.up)
+            if event.code == "ABS_HAT0Y" and event.state == 1:
+                keyboard.press(config_linux.down)
+            if event.code == "ABS_HAT0Y" and event.state == 0:
+                keyboard.release(config_linux.down)
+            """
+            Changing modes
             """
             if event.code == "BTN_SELECT" and event.state == 1:
                 casual()
@@ -164,22 +182,5 @@ left alt = 56
 BTN_START = start
 BTN_SELECT = select
 
-up - 103
-left - 105
-down - 108
-right - 106
-numpad 1 = 79
-numpad 3 = 81
-numpad 7 - 71
-numpad 9 = 73
 
-BTN_WEST = y
-BTN_NORTH = x
-BTN_SOUTH = a 
-BTN_EAST = b
-
-ABS_Z = lt
-ABS_RZ = rt
-BTN_TL = lb
-BTN_TR = rb
 """
