@@ -7,6 +7,29 @@ Python script with only two libraries, working on linux and windows.
 It's open source, everyone can see how it's made and contribute, it's not trying to hide itself or do something suspicious.  
 At this moment there is no graphical user interface.  
 
+### Basic hotkeys
+```start``` - main preset  
+```select``` - custom preset  
+
+Main preset:  
+Contains moving, rotating character (holding Y) and walking diagonally (bumpers and triggers)  
+On ```B``` button is switch for ```combat``` preset  
+```X``` is ```F1```  
+```A``` is ```F2```  
+
+Combat preset:
+```B``` is switching back to main preset (by default you can only go to combat mode from main preset)  
+Every button and trigger is customizable here:  
+```F3-F4``` for bumpers  
+```F5-F6``` for triggers  
+```F7-F9``` for ```Y, X, A```  
+
+Custom preset:  
+```CF1-CF2``` for bumpers
+```CF3-CF4``` for triggers  
+```CF5-CF8``` for ```Y, X, A, B```
+
+
 ### Config.py
 Comment one that you are **not** using ```Linux settings``` or ```Windows settings``` in a file.  
 It's customizable if you want to make it feel a little bit personal.  
