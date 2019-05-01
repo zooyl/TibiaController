@@ -15,21 +15,21 @@ def main():
             Function allows character to move
             It is necessary here to rotate character
             """
-            if event.code == "ABS_HAT0X" and event.state == 1:
+            if event.code == config.d_pad_x_axis and event.state == 1:
                 keyboard.press(config.right)
-            if event.code == "ABS_HAT0X" and event.state == 0:
+            if event.code == config.d_pad_x_axis and event.state == 0:
                 keyboard.release(config.right)
-            if event.code == "ABS_HAT0X" and event.state == -1:
+            if event.code == config.d_pad_x_axis and event.state == -1:
                 keyboard.press(config.left)
-            if event.code == "ABS_HAT0X" and event.state == 0:
+            if event.code == config.d_pad_x_axis and event.state == 0:
                 keyboard.release(config.left)
-            if event.code == "ABS_HAT0Y" and event.state == -1:
+            if event.code == config.d_pad_y_axis and event.state == -1:
                 keyboard.press(config.up)
-            if event.code == "ABS_HAT0Y" and event.state == 0:
+            if event.code == config.d_pad_y_axis and event.state == 0:
                 keyboard.release(config.up)
-            if event.code == "ABS_HAT0Y" and event.state == 1:
+            if event.code == config.d_pad_y_axis and event.state == 1:
                 keyboard.press(config.down)
-            if event.code == "ABS_HAT0Y" and event.state == 0:
+            if event.code == config.d_pad_y_axis and event.state == 0:
                 keyboard.release(config.down)
             """
             Rotating character by holding left ctrl -
@@ -79,21 +79,21 @@ def battle():
             Function allows character to move
             It is necessary here to rotate character
             """
-            if event.code == "ABS_HAT0X" and event.state == 1:
+            if event.code == config.d_pad_x_axis and event.state == 1:
                 keyboard.press(config.right)
-            if event.code == "ABS_HAT0X" and event.state == 0:
+            if event.code == config.d_pad_x_axis and event.state == 0:
                 keyboard.release(config.right)
-            if event.code == "ABS_HAT0X" and event.state == -1:
+            if event.code == config.d_pad_x_axis and event.state == -1:
                 keyboard.press(config.left)
-            if event.code == "ABS_HAT0X" and event.state == 0:
+            if event.code == config.d_pad_x_axis and event.state == 0:
                 keyboard.release(config.left)
-            if event.code == "ABS_HAT0Y" and event.state == -1:
+            if event.code == config.d_pad_y_axis and event.state == -1:
                 keyboard.press(config.up)
-            if event.code == "ABS_HAT0Y" and event.state == 0:
+            if event.code == config.d_pad_y_axis and event.state == 0:
                 keyboard.release(config.up)
-            if event.code == "ABS_HAT0Y" and event.state == 1:
+            if event.code == config.d_pad_y_axis and event.state == 1:
                 keyboard.press(config.down)
-            if event.code == "ABS_HAT0Y" and event.state == 0:
+            if event.code == config.d_pad_y_axis and event.state == 0:
                 keyboard.release(config.down)
             """
             triggers - you can change "config.[button]" 
@@ -137,21 +137,21 @@ def custom():
             Function allows character to move
             It is necessary here to rotate character
             """
-            if event.code == "ABS_HAT0X" and event.state == 1:
+            if event.code == config.d_pad_x_axis and event.state == 1:
                 keyboard.press(config.right)
-            if event.code == "ABS_HAT0X" and event.state == 0:
+            if event.code == config.d_pad_x_axis and event.state == 0:
                 keyboard.release(config.right)
-            if event.code == "ABS_HAT0X" and event.state == -1:
+            if event.code == config.d_pad_x_axis and event.state == -1:
                 keyboard.press(config.left)
-            if event.code == "ABS_HAT0X" and event.state == 0:
+            if event.code == config.d_pad_x_axis and event.state == 0:
                 keyboard.release(config.left)
-            if event.code == "ABS_HAT0Y" and event.state == -1:
+            if event.code == config.d_pad_y_axis and event.state == -1:
                 keyboard.press(config.up)
-            if event.code == "ABS_HAT0Y" and event.state == 0:
+            if event.code == config.d_pad_y_axis and event.state == 0:
                 keyboard.release(config.up)
-            if event.code == "ABS_HAT0Y" and event.state == 1:
+            if event.code == config.d_pad_y_axis and event.state == 1:
                 keyboard.press(config.down)
-            if event.code == "ABS_HAT0Y" and event.state == 0:
+            if event.code == config.d_pad_y_axis and event.state == 0:
                 keyboard.release(config.down)
             """
             triggers - you can change "config.[button]" 

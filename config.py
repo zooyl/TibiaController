@@ -60,10 +60,15 @@ cf8 = 'ctrl+f8'
 # They are the same on Linux and Windows !
 # -----------------------
 
+# numpad
 numpad_1 = 79
 numpad_3 = 81
 numpad_7 = 71
 numpad_9 = 73
+
+# d-pad
+d_pad_x_axis = "ABS_HAT0X"
+d_pad_y_axis = "ABS_HAT0Y"
 
 # bumpers
 lb = "BTN_TL"
