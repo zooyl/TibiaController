@@ -7,6 +7,7 @@ import config
 
 
 def main():
+    print('Running main mode')
     while True:
         events = get_gamepad()
         for event in events:
@@ -46,9 +47,9 @@ def main():
                 keyboard.send(config.numpad_7)
             if event.code == config.rb and event.state == 1:
                 keyboard.send(config.numpad_9)
-            if event.code == config.rt and event.state > 1000:
+            if event.code == config.rt and event.state > config.trigger_power:
                 keyboard.send(config.numpad_3)
-            if event.code == config.lt and event.state > 1000:
+            if event.code == config.lt and event.state > config.trigger_power:
                 keyboard.send(config.numpad_1)
             """
             buttons - you can change "config.[button]" 
@@ -62,7 +63,7 @@ def main():
             Changing modes
             """
             if event.code == config.select and event.state == 1:
-                casual()
+                custom()
             if event.code == config.start and event.state == 1:
                 main()
             if event.code == config.b and event.state == 1:
@@ -70,6 +71,7 @@ def main():
 
 
 def battle():
+    print('Running battle mode')
     while True:
         events = get_gamepad()
         for event in events:
@@ -101,9 +103,9 @@ def battle():
                 keyboard.send(config.f3)
             if event.code == config.rb and event.state == 1:
                 keyboard.send(config.f4)
-            if event.code == config.rt and event.state > 1000:
+            if event.code == config.rt and event.state > config.trigger_power:
                 keyboard.send(config.f5)
-            if event.code == config.lt and event.state > 1000:
+            if event.code == config.lt and event.state > config.trigger_power:
                 keyboard.send(config.f6)
             """
             buttons - you can change "config.[button]" 
@@ -119,14 +121,15 @@ def battle():
             Changing modes
             """
             if event.code == config.select and event.state == 1:
-                casual()
+                custom()
             if event.code == config.start and event.state == 1:
                 main()
             if event.code == config.b and event.state == 1:
                 main()
 
 
-def casual():
+def custom():
+    print('Running custom mode')
     while True:
         events = get_gamepad()
         for event in events:
@@ -158,9 +161,9 @@ def casual():
                 keyboard.send(config.cf1)
             if event.code == config.rb and event.state == 1:
                 keyboard.send(config.cf2)
-            if event.code == config.rt and event.state > 1000:
+            if event.code == config.rt and event.state > config.trigger_power:
                 keyboard.send(config.cf3)
-            if event.code == config.lt and event.state > 1000:
+            if event.code == config.lt and event.state > config.trigger_power:
                 keyboard.send(config.cf4)
             """
             buttons - you can change "config.[button]" 
@@ -178,7 +181,7 @@ def casual():
             Changing modes
             """
             if event.code == config.select and event.state == 1:
-                casual()
+                custom()
             if event.code == config.start and event.state == 1:
                 main()
 

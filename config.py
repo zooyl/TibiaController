@@ -2,27 +2,36 @@
 # If you are on Windows - comment Linux settings and uncomment Windows Settings
 # If you are on Linux - comment Windows settings and uncomment Linux Settings
 #
+# -----------------------
 # Linux settings
+
 right = 106
 left = 105
 up = 103
 down = 108
-
-numpad_1 = 79
-numpad_3 = 81
-numpad_7 = 71
-numpad_9 = 73
-
+start = "BTN_START"
+select = "BTN_SELECT"
+y = "BTN_WEST"
+x = "BTN_NORTH"
+a = "BTN_SOUTH"
+b = "BTN_EAST"
+trigger_power = 1000
+# -----------------------
 # Windows settings
-# right = 0x66
-# left = 0x64
-# up = 0x68
-# down = 0x62
 
-# numpad_1 = 0x61
-# numpad_3 = 0x63
-# numpad_7 = 0x67
-# numpad_9 = 0x69
+# right = 'RIGHT_ARROW'
+# left = 'LEFT_ARROW'
+# up = 'UP_ARROW'
+# down = 'DOWN_ARROW'
+# start = "BTN_SELECT"
+# select = "BTN_START"
+# y = "BTN_NORTH"
+# x = "BTN_WEST"
+# a = "BTN_SOUTH"
+# b = "BTN_EAST"
+# trigger_power = 150
+
+# -----------------------
 
 # System configuration
 left_ctrl = 'left ctrl'
@@ -47,17 +56,14 @@ cf7 = 'ctrl+f7'
 cf8 = 'ctrl+f8'
 
 # -----------------------
-# Do not change that !
+# Do not change unless you know what you are doing.
+# They are the same on Linux and Windows !
 # -----------------------
-# main buttons
-start = "BTN_START"
-select = "BTN_SELECT"
 
-# buttons
-y = "BTN_WEST"
-x = "BTN_NORTH"
-a = "BTN_SOUTH"
-b = "BTN_EAST"
+numpad_1 = 79
+numpad_3 = 81
+numpad_7 = 71
+numpad_9 = 73
 
 # bumpers
 lb = "BTN_TL"
