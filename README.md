@@ -29,6 +29,7 @@ Custom preset:
 ```CF3-CF4``` for triggers  
 ```CF5-CF8``` for ```Y, X, A, B```
 
+```CF*``` means ```ctrl+F*```
 
 ### Config.py
 Comment one that you are **not** using ```Linux settings``` or ```Windows settings``` in a file.  
