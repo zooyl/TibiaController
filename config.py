@@ -34,6 +34,7 @@ trigger_power = 1000
 # -----------------------
 
 # System configuration
+
 left_ctrl = 'left ctrl'
 
 f1 = 'f1'
