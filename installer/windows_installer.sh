@@ -2,9 +2,8 @@
 
 echo "---------------------------------------------------"
 echo "Install python first if you already don't have it"
-echo "In this folder file is already provided or"
 echo "you can download it from official page:"
-echo "https://www.python.org/downloads/release/python-373/"
+echo "https://www.python.org/downloads/release/python-368/"
 echo "To check if you already have it installed"
 echo "in cmd type: 'python --version' (works for 3.6+)"
 echo "Then run this installer"
