@@ -53,7 +53,8 @@ Create virtual environment on your machine, then install requirements using:
 ```pip install -r requirements.txt```  
 
 ### Windows installation  
-work in progress
+In ```installer``` folder simply hit ```windows_installer.bat```  
+Its the same as running ```pip install -r requirements.txt``` (make sure you have python already installed and you are in "requirements.txt" directory.
 
 ### Running on Linux
 If you want to run script on linux you have to be logged in as sudo in terminal  
@@ -65,6 +66,9 @@ run script: "python [controller_name].py"
 Make sure you comment proper settings in config.py  
 They are set by default for windows  
 And connect your controller :)  
+
+### Running on Windows
+Running on windows is simply, after installation open cmd in root directory and type ```python [controller_name].py```
 
 ### Advanced customization
 
