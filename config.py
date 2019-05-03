@@ -5,31 +5,31 @@
 # -----------------------
 # Linux settings
 
-right = 106
-left = 105
-up = 103
-down = 108
-start = "BTN_START"
-select = "BTN_SELECT"
-y = "BTN_WEST"
-x = "BTN_NORTH"
-a = "BTN_SOUTH"
-b = "BTN_EAST"
-trigger_power = 1000
+# right = 106
+# left = 105
+# up = 103
+# down = 108
+# start = "BTN_START"
+# select = "BTN_SELECT"
+# y = "BTN_WEST"
+# x = "BTN_NORTH"
+# a = "BTN_SOUTH"
+# b = "BTN_EAST"
+# trigger_power = 1000
 # -----------------------
 # Windows settings
 
-# right = 'RIGHT_ARROW'
-# left = 'LEFT_ARROW'
-# up = 'UP_ARROW'
-# down = 'DOWN_ARROW'
-# start = "BTN_SELECT"
-# select = "BTN_START"
-# y = "BTN_NORTH"
-# x = "BTN_WEST"
-# a = "BTN_SOUTH"
-# b = "BTN_EAST"
-# trigger_power = 150
+right = 'RIGHT_ARROW'
+left = 'LEFT_ARROW'
+up = 'UP_ARROW'
+down = 'DOWN_ARROW'
+start = "BTN_SELECT"
+select = "BTN_START"
+y = "BTN_NORTH"
+x = "BTN_WEST"
+a = "BTN_SOUTH"
+b = "BTN_EAST"
+trigger_power = 150
 
 # -----------------------
 
