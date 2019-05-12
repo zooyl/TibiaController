@@ -20,6 +20,7 @@ echo
 virtualenv -p python3 venv
 source ./venv/bin/activate
 # pip install -r requirements.txt
+sudo apt-get install scrot
 venv/bin/pip install -r ./../requirements.txt
 echo "---------------------------------------------------"
 echo "Installation completed"
