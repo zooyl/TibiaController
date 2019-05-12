@@ -11,28 +11,28 @@ def main():
     while True:
         events = get_gamepad()
         for event in events:
-            """
-            Right analog - beta
-            """
-            if event.code == config.right_stick_x_axis and 25000 < event.state:
-                pyautogui.hotkey('shift', 'f1')
-            if event.code == config.right_stick_x_axis and event.state < -25000:
-                pyautogui.hotkey('shift', 'f2')
-            if event.code == config.right_stick_y_axis and 20000 < event.state:
-                pyautogui.hotkey('shift', 'f3')
-            if event.code == config.right_stick_y_axis and event.state < -25000:
-                pyautogui.hotkey('shift', 'f4')
-            """
-            Left analog - beta
-            """
-            if event.code == config.left_stick_x_axis and 25000 < event.state:
-                pyautogui.hotkey('shift', 'f5')
-            if event.code == config.left_stick_x_axis and event.state < -25000:
-                pyautogui.hotkey('shift', 'f6')
-            if event.code == config.left_stick_y_axis and 20000 < event.state:
-                pyautogui.hotkey('shift', 'f7')
-            if event.code == config.left_stick_y_axis and event.state < -25000:
-                pyautogui.hotkey('shift', 'f8')
+            # """
+            # Right analog - beta
+            # """
+            # if event.code == config.right_stick_x_axis and 25000 < event.state:
+            #     pyautogui.hotkey('shift', 'f1')
+            # if event.code == config.right_stick_x_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f2')
+            # if event.code == config.right_stick_y_axis and 20000 < event.state:
+            #     pyautogui.hotkey('shift', 'f3')
+            # if event.code == config.right_stick_y_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f4')
+            # """
+            # Left analog - beta
+            # """
+            # if event.code == config.left_stick_x_axis and 25000 < event.state:
+            #     pyautogui.hotkey('shift', 'f5')
+            # if event.code == config.left_stick_x_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f6')
+            # if event.code == config.left_stick_y_axis and 20000 < event.state:
+            #     pyautogui.hotkey('shift', 'f7')
+            # if event.code == config.left_stick_y_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f8')
             """
             Function allows character to move
             """
