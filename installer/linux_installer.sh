@@ -20,15 +20,12 @@ echo
 virtualenv -p python3 venv
 source ./venv/bin/activate
 # pip install -r requirements.txt
+sudo apt-get install scrot
 venv/bin/pip install -r ./../requirements.txt
 echo "---------------------------------------------------"
 echo "Installation completed"
 echo "---------------------------------------------------"
-echo "If you want to run script on linux you have"
-echo "to be logged in as sudo in terminal"
-echo "TO DO so:"
-echo "open terminal in project root directory"
-echo "switch to sudo by: ""sudo su"""
+echo "In root directory"
 echo "activate venv: ""source installer/venv/bin/activate"""
 echo "run script: ""python [controller_name].py"""
 echo "---------------------------------------------------"

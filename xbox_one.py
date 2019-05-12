@@ -1,6 +1,6 @@
 # Dependencies
 from inputs import get_gamepad
-import keyboard
+import pyautogui
 
 # Config settings
 import config
@@ -11,54 +11,74 @@ def main():
     while True:
         events = get_gamepad()
         for event in events:
+            # """
+            # Right analog - beta
+            # """
+            # if event.code == config.right_stick_x_axis and 25000 < event.state:
+            #     pyautogui.hotkey('shift', 'f1')
+            # if event.code == config.right_stick_x_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f2')
+            # if event.code == config.right_stick_y_axis and 20000 < event.state:
+            #     pyautogui.hotkey('shift', 'f3')
+            # if event.code == config.right_stick_y_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f4')
+            # """
+            # Left analog - beta
+            # """
+            # if event.code == config.left_stick_x_axis and 25000 < event.state:
+            #     pyautogui.hotkey('shift', 'f5')
+            # if event.code == config.left_stick_x_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f6')
+            # if event.code == config.left_stick_y_axis and 20000 < event.state:
+            #     pyautogui.hotkey('shift', 'f7')
+            # if event.code == config.left_stick_y_axis and event.state < -25000:
+            #     pyautogui.hotkey('shift', 'f8')
             """
             Function allows character to move
-            It is necessary here to rotate character
             """
             if event.code == config.d_pad_x_axis and event.state == 1:
-                keyboard.press(config.right)
+                pyautogui.keyDown('right')
             if event.code == config.d_pad_x_axis and event.state == 0:
-                keyboard.release(config.right)
+                pyautogui.keyUp('right')
             if event.code == config.d_pad_x_axis and event.state == -1:
-                keyboard.press(config.left)
+                pyautogui.keyDown('left')
             if event.code == config.d_pad_x_axis and event.state == 0:
-                keyboard.release(config.left)
+                pyautogui.keyUp('left')
             if event.code == config.d_pad_y_axis and event.state == -1:
-                keyboard.press(config.up)
+                pyautogui.keyDown('up')
             if event.code == config.d_pad_y_axis and event.state == 0:
-                keyboard.release(config.up)
+                pyautogui.keyUp('up')
             if event.code == config.d_pad_y_axis and event.state == 1:
-                keyboard.press(config.down)
+                pyautogui.keyDown('down')
             if event.code == config.d_pad_y_axis and event.state == 0:
-                keyboard.release(config.down)
+                pyautogui.keyUp('down')
             """
-            Rotating character by holding left ctrl -
-            you can change "config.[button]" for your own preferences
+            Rotating character by holding left ctrl ("Y" in this case) -
+            you can change for your own preferences
             """
             if event.code == config.y and event.state == 1:
-                keyboard.press(config.left_ctrl)
+                pyautogui.keyDown('ctrl')
             if event.code == config.y and event.state == 0:
-                keyboard.release(config.left_ctrl)
+                pyautogui.keyUp('ctrl')
             """
-            triggers - numpad walking - you can change "config.[button]" 
-            for your own preferences
+            triggers and bumpers - numpad walking - you can change for your own preferences
             """
             if event.code == config.lb and event.state == 1:
-                keyboard.send(config.numpad_7)
+                pyautogui.press('num7')
             if event.code == config.rb and event.state == 1:
-                keyboard.send(config.numpad_9)
+                pyautogui.press('num9')
             if event.code == config.rt and event.state > config.trigger_power:
-                keyboard.send(config.numpad_3)
+                pyautogui.press('num3')
             if event.code == config.lt and event.state > config.trigger_power:
-                keyboard.send(config.numpad_1)
+                pyautogui.press('num1')
             """
-            buttons - you can change "config.[button]" 
-            for your own preferences (y does rotating and b change mode)
+            buttons - you can change for your own preferences 
+            ("Y" does rotating and "B" change mode)
             """
             if event.code == config.x and event.state == 1:
-                keyboard.send(config.f1)
+                pyautogui.press('f1')
             if event.code == config.a and event.state == 1:
-                keyboard.send(config.f2)
+                pyautogui.press('f2')
             """
             Changing modes
             """
@@ -77,46 +97,43 @@ def battle():
         for event in events:
             """
             Function allows character to move
-            It is necessary here to rotate character
             """
             if event.code == config.d_pad_x_axis and event.state == 1:
-                keyboard.press(config.right)
+                pyautogui.keyDown('right')
             if event.code == config.d_pad_x_axis and event.state == 0:
-                keyboard.release(config.right)
+                pyautogui.keyUp('right')
             if event.code == config.d_pad_x_axis and event.state == -1:
-                keyboard.press(config.left)
+                pyautogui.keyDown('left')
             if event.code == config.d_pad_x_axis and event.state == 0:
-                keyboard.release(config.left)
+                pyautogui.keyUp('left')
             if event.code == config.d_pad_y_axis and event.state == -1:
-                keyboard.press(config.up)
+                pyautogui.keyDown('up')
             if event.code == config.d_pad_y_axis and event.state == 0:
-                keyboard.release(config.up)
+                pyautogui.keyUp('up')
             if event.code == config.d_pad_y_axis and event.state == 1:
-                keyboard.press(config.down)
+                pyautogui.keyDown('down')
             if event.code == config.d_pad_y_axis and event.state == 0:
-                keyboard.release(config.down)
+                pyautogui.keyUp('down')
             """
-            triggers - you can change "config.[button]" 
-            for your own preferences
+            triggers and bumpers - you can change for your own preferences
             """
             if event.code == config.lb and event.state == 1:
-                keyboard.send(config.f3)
+                pyautogui.press('f3')
             if event.code == config.rb and event.state == 1:
-                keyboard.send(config.f4)
+                pyautogui.press('f4')
             if event.code == config.rt and event.state > config.trigger_power:
-                keyboard.send(config.f5)
+                pyautogui.press('f5')
             if event.code == config.lt and event.state > config.trigger_power:
-                keyboard.send(config.f6)
+                pyautogui.press('f6')
             """
-            buttons - you can change "config.[button]" 
-            for your own preferences
+            buttons - you can change for your own preferences
             """
             if event.code == config.y and event.state == 1:
-                keyboard.send(config.f7)
+                pyautogui.press('f7')
             if event.code == config.x and event.state == 1:
-                keyboard.send(config.f8)
+                pyautogui.press('f8')
             if event.code == config.a and event.state == 1:
-                keyboard.send(config.f9)
+                pyautogui.press('f9')
             """
             Changing modes
             """
@@ -135,48 +152,60 @@ def custom():
         for event in events:
             """
             Function allows character to move
-            It is necessary here to rotate character
             """
             if event.code == config.d_pad_x_axis and event.state == 1:
-                keyboard.press(config.right)
+                pyautogui.keyDown('right')
             if event.code == config.d_pad_x_axis and event.state == 0:
-                keyboard.release(config.right)
+                pyautogui.keyUp('right')
             if event.code == config.d_pad_x_axis and event.state == -1:
-                keyboard.press(config.left)
+                pyautogui.keyDown('left')
             if event.code == config.d_pad_x_axis and event.state == 0:
-                keyboard.release(config.left)
+                pyautogui.keyUp('left')
             if event.code == config.d_pad_y_axis and event.state == -1:
-                keyboard.press(config.up)
+                pyautogui.keyDown('up')
             if event.code == config.d_pad_y_axis and event.state == 0:
-                keyboard.release(config.up)
+                pyautogui.keyUp('up')
             if event.code == config.d_pad_y_axis and event.state == 1:
-                keyboard.press(config.down)
+                pyautogui.keyDown('down')
             if event.code == config.d_pad_y_axis and event.state == 0:
-                keyboard.release(config.down)
+                pyautogui.keyUp('down')
             """
-            triggers - you can change "config.[button]" 
+            triggers and bumpers - you can change hotkey
             for your own preferences
             """
             if event.code == config.lb and event.state == 1:
-                keyboard.send(config.cf1)
+                pyautogui.hotkey('ctrl', 'f1')
             if event.code == config.rb and event.state == 1:
-                keyboard.send(config.cf2)
+                pyautogui.keyDown('shift')
+            if event.code == config.rb and event.state == 0:
+                pyautogui.keyUp('shift')
             if event.code == config.rt and event.state > config.trigger_power:
-                keyboard.send(config.cf3)
+                pyautogui.hotkey('ctrl', 'f3')
             if event.code == config.lt and event.state > config.trigger_power:
-                keyboard.send(config.cf4)
+                pyautogui.hotkey('ctrl', 'f4')
             """
-            buttons - you can change "config.[button]" 
-            for your own preferences
+            buttons - you can change hotkey for your own preferences
+            "B" is for changing mode
+            "A" is for collecting loot around you (you have to specify your own x, y based on display resolution)
+            ~ It works by holding RB and clicking "A" button in custom mode ~
             """
             if event.code == config.y and event.state == 1:
-                keyboard.send(config.cf5)
+                pyautogui.hotkey('ctrl', 'f5')
             if event.code == config.x and event.state == 1:
-                keyboard.send(config.cf6)
+                pyautogui.hotkey('ctrl', 'f6')
             if event.code == config.a and event.state == 1:
-                keyboard.send(config.cf7)
-            if event.code == config.b and event.state == 1:
-                keyboard.send(config.cf8)
+                # collect right loot (North-East, East)
+                pyautogui.click(x=939, y=415, button='right')
+                pyautogui.click(x=936, y=475, button='right')
+                # collect left loot (South-West, West)
+                pyautogui.click(x=805, y=479, button='right')
+                pyautogui.click(x=804, y=545, button='right')
+                # collect top loot (North-West, North)
+                pyautogui.click(x=812, y=415, button='right')
+                pyautogui.click(x=879, y=417, button='right')
+                # collect bottom loot (South-East, South)
+                pyautogui.click(x=871, y=539, button='right')
+                pyautogui.click(x=940, y=543, button='right')
             """
             Changing modes
             """
@@ -184,6 +213,8 @@ def custom():
                 custom()
             if event.code == config.start and event.state == 1:
                 main()
+            if event.code == config.b and event.state == 1:
+                battle()
 
 
 if __name__ == "__main__":

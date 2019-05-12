@@ -13,3 +13,7 @@ def controller_status():
             print('-------------')
             print("state")
             print(event.state)
+
+
+if __name__ == "__main__":
+    controller_status()
