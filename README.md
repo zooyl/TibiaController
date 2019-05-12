@@ -1,14 +1,19 @@
 # TibiaController
 
-Boring of grinding hunting grounds without smile on your face?  
+Bored of grinding hunting grounds without smile on your face?  
 Maybe its time to try it out with controller instead, comfortably sitting on your couch.  
 Fear no more, here it is:  
-Python script with only two libraries, working on linux and windows.  
+Python script made with inputs, pyautogui. Working on linux and windows.  
 It's open source, everyone can see how it's made and contribute, it's not trying to hide itself or do something suspicious.  
 At this moment there is no graphical user interface.  
 
 Note:  
 Right now only xbox one controller is done.
+
+### Requirements
+[Python 3](https://www.python.org/downloads/release/python-368/)  
+Installed libraries from ```requirements.txt```, scripts in ```installer``` folder does it for you.  
+On Linux system you also have to install ```sudo apt-get install scrot``` (required for [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/install.html))
 
 ### Basic hotkeys
 ```start``` - main preset  
@@ -28,17 +33,23 @@ Every button and trigger is customizable here:
 ```F7-F9``` for ```Y, X, A```  
 
 Custom preset:  
-```CF1-CF2``` for bumpers
+```CF1``` for lb  
+holding ```shift``` + "A" button is looting area around character (shift + right click to loot) but you have to specify your own x and y axis based on display resolution.  
+There is script provided to check it in ```checking_inputs``` directory. Open terminal there and type ```python display_resolution.py```, next move mouse around and click "A" button to see current position.  
 ```CF3-CF4``` for triggers  
-```CF5-CF8``` for ```Y, X, A, B```
+```CF5-CF6``` for ```Y, X```
 
 ```CF*``` means ```ctrl+F*```
 
 ### Config.py
 Comment one that you are **not** using ```Linux settings``` or ```Windows settings``` in a file.  
-It's customizable if you want to make it feel a little bit personal.  
-All you have to do is change ```System configuration``` (f1-f9 or cf1-cf8) in ```config.py```  
- 
+
+ ### Windows installation  
+Open ```installer``` directory and run ```windows_installer.bat```
+
+### Running on Windows
+open ```cmd``` in root directory (nice trick to run it is to type cmd in address bar and hit enter)  
+and run ```python [controller_name].py```
 
 ### Linux installation
 
@@ -52,14 +63,9 @@ If you want to install packages without installer.
 Create virtual environment on your machine, then install requirements using:
 ```pip install -r requirements.txt```  
 
-### Windows installation  
-work in progress
 
 ### Running on Linux
-If you want to run script on linux you have to be logged in as sudo in terminal  
-TO DO so:  
-open terminal in project root directory  
-switch to sudo by: "sudo su"  
+In root directory  
 activate venv: "source installer/venv/bin/activate"  
 run script: "python [controller_name].py"  
 Make sure you comment proper settings in config.py  
@@ -69,9 +75,9 @@ And connect your controller :)
 ### Advanced customization
 
 Additionally you can change buttons in ```[controller].py``` if you feel comfortable doing so,  
-for example: change ```config.[button]``` variable with existing or created one in ```config.py```  
+for example: change ```config.[button]``` or pyautogui [action](https://pyautogui.readthedocs.io/en/latest/keyboard.html).  
 ```if event.code == config.lb and event.state == 1:```  
-     ```keyboard.send(config.numpad_7)```  
+     ```pyautogui.hotkey('ctrl', 'f4')```  
 
 ```event.state``` explanation:  
 for buttons ```event.state == 1``` is clicked, while ```0``` would be released  
@@ -91,4 +97,4 @@ Feel free to fork project and make pull requests
 
 * [Python](https://www.python.org/)
 * [Inputs](https://github.com/zeth/inputs)
-* [Keyboard](https://github.com/boppreh/keyboard)
+* [PyAutoGUI](https://github.com/asweigart/pyautogui)
