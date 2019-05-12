@@ -12,6 +12,28 @@ def main():
         events = get_gamepad()
         for event in events:
             """
+            Right analog
+            """
+            if event.code == config.right_stick_x_axis and 25000 < event.state:
+                keyboard.send(config.sf1)
+            if event.code == config.right_stick_x_axis and event.state < -25000:
+                keyboard.send(config.sf2)
+            if event.code == config.right_stick_y_axis and 20000 < event.state:
+                keyboard.send(config.sf3)
+            if event.code == config.right_stick_y_axis and event.state < -25000:
+                keyboard.send(config.sf4)
+            """
+            Left analog
+            """
+            if event.code == config.left_stick_x_axis and 25000 < event.state:
+                keyboard.send(config.sf5)
+            if event.code == config.left_stick_x_axis and event.state < -25000:
+                keyboard.send(config.sf6)
+            if event.code == config.left_stick_y_axis and 20000 < event.state:
+                keyboard.send(config.sf7)
+            if event.code == config.left_stick_y_axis and event.state < -25000:
+                keyboard.send(config.sf8)
+            """
             Function allows character to move
             It is necessary here to rotate character
             """

@@ -56,6 +56,15 @@ cf6 = 'ctrl+f6'
 cf7 = 'ctrl+f7'
 cf8 = 'ctrl+f8'
 
+sf1 = 'shift+f1'
+sf2 = 'shift+f2'
+sf3 = 'shift+f3'
+sf4 = 'shift+f4'
+sf5 = 'shift+f5'
+sf6 = 'shift+f6'
+sf7 = 'shift+f7'
+sf8 = 'shift+f8'
+
 # -----------------------
 # Do not change unless you know what you are doing.
 # They are the same on Linux and Windows !
@@ -78,4 +87,11 @@ rb = "BTN_TR"
 # triggers
 lt = "ABS_Z"
 rt = "ABS_RZ"
+
+# analog sticks
+right_stick_x_axis = "ABS_RX"
+right_stick_y_axis = "ABS_RY"
+
+left_stick_x_axis = "ABS_X"
+left_stick_y_axis = "ABS_Y"
 # -----------------------

@@ -15,6 +15,7 @@ pip install -r ./../requirements.txt
 @echo "---------------------------------------------------"
 @echo "If you want to run controller:"
 @echo "open cmd in project root directory"
+@echo "nice trick to run it is to type cmd in address bar"
 @echo "run script by command: 'python [controller_name].py'"
 @echo "Make sure you comment proper settings in config.py"
 @echo "And connect your controller :)"
