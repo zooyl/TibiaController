@@ -93,8 +93,7 @@ for y axies ```event.state == 1``` is down, while ```-1``` is up and ```0``` for
 for triggers ```event.state > config.trigger_power``` means how far trigger has to be pushed to perform action  
 
 ### Snippets
-Inside ```snippets.py``` you can find custom settings. With few tweaks you can implement them.  
-To check your display x, y points. Run ```python display_resolution.py``` in terminal and click "A" on controller to check for current co-ordinates.
+Inside ```snippets.py``` you can find custom settings. With few tweaks you can implement them.
  
 
 ## Additional info  
