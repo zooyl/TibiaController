@@ -12,6 +12,10 @@
 # a = "BTN_SOUTH"
 # b = "BTN_EAST"
 # trigger_power = 1000
+# numpad_1 = 'num1'
+# numpad_3 = 'num3'
+# numpad_7 = 'num7'
+# numpad_9 = 'num9'
 # -----------------------
 # Windows settings
 
@@ -21,8 +25,11 @@ y = "BTN_NORTH"
 x = "BTN_WEST"
 a = "BTN_SOUTH"
 b = "BTN_EAST"
-trigger_power = 150
-
+trigger_power = 200
+numpad_1 = 'end'
+numpad_3 = 'pgdn'
+numpad_7 = 'home'
+numpad_9 = 'pgup'
 
 # -----------------------
 # Do not change unless you know what you are doing.

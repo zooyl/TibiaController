@@ -42,13 +42,13 @@ def main():
             triggers and bumpers - numpad walking - you can change for your own preferences
             """
             if event.code == config.lb and event.state == 1:
-                pyautogui.press('num7')
+                pyautogui.press(config.numpad_7)
             if event.code == config.rb and event.state == 1:
-                pyautogui.press('num9')
+                pyautogui.press(config.numpad_9)
             if event.code == config.rt and event.state > config.trigger_power:
-                pyautogui.press('num3')
+                pyautogui.press(config.numpad_3)
             if event.code == config.lt and event.state > config.trigger_power:
-                pyautogui.press('num1')
+                pyautogui.press(config.numpad_1)
             """
             buttons - you can change for your own preferences 
             ("Y" does rotating and "B" change mode)
@@ -154,9 +154,7 @@ def custom():
             if event.code == config.lb and event.state == 1:
                 pyautogui.hotkey('ctrl', 'f1')
             if event.code == config.rb and event.state == 1:
-                pyautogui.keyDown('shift')
-            if event.code == config.rb and event.state == 0:
-                pyautogui.keyUp('shift')
+                pyautogui.hotkey('ctrl', 'f2')
             if event.code == config.rt and event.state > config.trigger_power:
                 pyautogui.hotkey('ctrl', 'f3')
             if event.code == config.lt and event.state > config.trigger_power:
