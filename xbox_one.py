@@ -180,8 +180,6 @@ def custom():
                 custom()
             if event.code == config.start and event.state == 1:
                 main()
-            if event.code == config.b and event.state == 1:
-                battle()
 
 
 if __name__ == "__main__":
