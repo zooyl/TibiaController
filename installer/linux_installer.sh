@@ -2,7 +2,7 @@
 
 echo "---------------------------------------------------"
 echo "This script will install:"
-echo "Python and virtual environment."
+echo "Python, scrot (for PyAutoGUI) and virtual environment."
 echo "Activate it and download required packages"
 echo "---------------------------------------------------"
 read -n1 -r -p "Press any key to continue"

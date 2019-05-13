@@ -1,3 +1,4 @@
 .idea/
-xbox_one_venv/
+xbox_venv/
 __pycache__/
+custom.py
